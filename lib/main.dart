@@ -22,35 +22,33 @@ void main() {
           //mainAxisAlignment: MainAxisAlignment. ,
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Expanded(
-            //   child: ListView.builder(
-            //     itemCount: name.length,
-            //     //scrollDirection: Axis.horizontal,
-            //     //reverse: true,
-            //     itemBuilder: (c, i) {
-            //       return CircleAvatar(
-            //         child: Text(
-            //           " ${name[i]}",
-            //           style: TextStyle(
-            //             color:
-            //                 name[i].toString().toLowerCase() ==
-            //                     "Dolon".toLowerCase()
-            //                 ? Colors.orange
-            //                 : Colors.black,
-            //           ),
-            //         ),
-            //       );
-            //     },
-            //   ),
-            // ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: name.length,
+                //scrollDirection: Axis.horizontal,
+                //reverse: true,
+                itemBuilder: (c, i) {
+                  return CircleAvatar(
+                    child: Text(
+                      " ${name[i]}",
+                      style: TextStyle(
+                        color:
+                            name[i].toString().toLowerCase() ==
+                                "Dolon".toLowerCase()
+                            ? Colors.orange
+                            : Colors.black,
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: TextField(
-
                 decoration: InputDecoration(
-                 // hintText: "name",
-                  label: Text("name"),
-
+                  // hint: Text("enter your name"),
+                  labelText: " Name",
 
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -59,7 +57,9 @@ void main() {
                     borderSide: BorderSide(color: Colors.red),
                     borderRadius: BorderRadius.circular(12),
                   ),
-
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.red),
+                  ),
                 ),
               ),
             ),
